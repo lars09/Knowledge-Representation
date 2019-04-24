@@ -19,7 +19,7 @@ bubbleSort(List, List):- ordered(List).
 % lowest to highest
 
 ordered([]).
-
+ordered([_]).
 ordered([E1, E2| Tail]):- E1 =< E2,
   ordered([E2|Tail]).
   
