@@ -57,7 +57,7 @@ mov(put3in5, state(G5, G3), state(5, G3N)):-
 mov(empty5, state(_, G3), state(0, G3)).
 
 % 6. Empty 3 gallons bottle.
-mov(empty3, state(G5, _), state(G5, 0).
+mov(empty3, state(G5, _), state(G5, 0)).
 
 
 % 3. Creating a path
@@ -70,7 +70,7 @@ mov(empty3, state(G5, _), state(G5, 0).
 
 path(Initial, Initial, _,[]).
 
-path(Initial, Final, Visited, [MovName|Path):-
+path(Initial, Final, Visited, [MovName|Path]):-
   mov(MovName, Initial, Temp),
   \+member(Temp, Visited),
     path(Temp, Final, [Temp|Visited], Path).
