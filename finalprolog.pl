@@ -134,5 +134,22 @@ path(Ini, Fin, Visited, [move(M,C,Side)|Path]):-
   mov( move(M, C, Side), Ini, Temp),
   \+ member(Temp, Visited),
   path(Temp, Fin, [Temp|Visited], Path).
-		 
+
+% posRight(RX1, RX2, RX3). 
+xPosRight(59, 109, 159). % MaxX div 2 + 59
+yPosMis(20). % MaxY div 2 - 20
+yPosCan(20). % MaxY div 2 + 20
+xPosLeft(91,141,191).
+
+% move(Mov(M,C,Dir), MisPosLeft, MisPosRight, CanPosLefr, CanPosRight).
+
+move(Mov(M,C,left), MisPosLeft, MisPosRight, CanPosLefr, CanPosRight).
+  left(L2, M),
+  append(L1, L2, MisPosLeft),
+
+  % Move = mov(0,1, left)
+  % MisPosRight = [point(X,Y), point(X,Y), point(X,Y)]
+  % MisPosLeft  ) 0 []
+  % CanPosRight = [point(X,Y), point(X,Y), point(X,Y)]
+  % CanPosLeft = []
 		 
